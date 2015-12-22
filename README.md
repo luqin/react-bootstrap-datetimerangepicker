@@ -1,4 +1,4 @@
-# react-bootstrap-checkbox
+# react-bootstrap-datetimerangepicker
 
 [![NPM version][npm-badge]][npm] [![Build Status][travis-ci-image]][travis-ci-url]
 
@@ -8,7 +8,7 @@
 
 [awesome-bootstrap-checkbox](https://github.com/flatlogic/awesome-bootstrap-checkbox)
 
-Online demo: http://luqin.github.io/react-bootstrap-checkbox
+Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 
 ## Features
 
@@ -17,18 +17,18 @@ Online demo: http://luqin.github.io/react-bootstrap-checkbox
 ## Installation
 
 ```
-npm install ReactComponent --save
+npm install react-bootstrap-datetimerangepicker --save
 ```
 
 ## Usage
 
 ```
-import ReactComponent from 'react-bootstrap-checkbox';
+import DatetimeRangePicker from 'react-bootstrap-datetimerangepicker';
 
-<ReactComponent />
+<DatetimeRangePicker />
 ```
 
-More examples: [Online demo](http://luqin.github.io/react-bootstrap-checkbox), [Source](https://github.com/luqin/react-bootstrap-checkbox/tree/master/examples)
+More examples: [Online demo](http://luqin.github.io/react-bootstrap-datetimerangepicker), [Source](https://github.com/luqin/react-bootstrap-datetimerangepicker/tree/master/examples)
 
 ## Browser support
 
@@ -43,17 +43,17 @@ More examples: [Online demo](http://luqin.github.io/react-bootstrap-checkbox), [
 * Install the dependencies with `npm install`
 * Run the docs site in development mode with `npm start`. This will watch for file changes as you work. And auto refresh the page to see the updates.
 
-[npm-badge]: http://badge.fury.io/js/react-bootstrap-checkbox.svg
-[npm]: https://www.npmjs.com/package/react-bootstrap-checkbox
+[npm-badge]: http://badge.fury.io/js/react-bootstrap-datetimerangepicker.svg
+[npm]: https://www.npmjs.com/package/react-bootstrap-datetimerangepicker
 
-[deps-badge]: https://david-dm.org/luqin/react-bootstrap-checkbox.svg
-[deps]: https://david-dm.org/luqin/react-bootstrap-checkbox
+[deps-badge]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker.svg
+[deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker
 
-[dev-deps-badge]: https://david-dm.org/luqin/react-bootstrap-checkbox/dev-status.svg
-[dev-deps]: https://david-dm.org/luqin/react-bootstrap-checkbox#info=devDependencies
+[dev-deps-badge]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker/dev-status.svg
+[dev-deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker#info=devDependencies
 
-[peer-deps-badge]: https://david-dm.org/luqin/react-bootstrap-checkbox/peer-status.svg
-[peer-deps]: https://david-dm.org/luqin/react-bootstrap-checkbox#info=peerDependencies 
+[peer-deps-badge]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker/peer-status.svg
+[peer-deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker#info=peerDependencies 
 
-[travis-ci-image]: https://travis-ci.org/luqin/react-bootstrap-checkbox.svg
-[travis-ci-url]: https://travis-ci.org/luqin/react-bootstrap-checkbox
+[travis-ci-image]: https://travis-ci.org/luqin/react-bootstrap-datetimerangepicker.svg
+[travis-ci-url]: https://travis-ci.org/luqin/react-bootstrap-datetimerangepicker
