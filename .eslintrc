@@ -1,0 +1,9 @@
+{
+  "parser": "babel-eslint",
+  "extends": "onefe",
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+  }
+}
