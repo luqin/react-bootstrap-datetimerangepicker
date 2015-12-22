@@ -6,7 +6,7 @@
 [![devDependency Status][dev-deps-badge]][dev-deps]
 [![peerDependency Status][peer-deps-badge]][peer-deps]
 
-[awesome-bootstrap-checkbox](https://github.com/flatlogic/awesome-bootstrap-checkbox)
+[bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
 
 Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 
