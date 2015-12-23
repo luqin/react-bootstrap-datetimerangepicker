@@ -32,8 +32,10 @@ npm install react-bootstrap-datetimerangepicker onefe-bootstrap-daterangepicker 
 
 ## Usage
 
-import style
+Date Range Picker relies on [Bootstrap](http://getbootstrap.com/), [jQuery](http://www.jquery.com/) and [Moment.js](http://momentjs.com/). Include the required stylesheet in your page:
+
 ```js
+import 'bootstrap/dist/css/bootstrap.css';
 import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
 ```
 
