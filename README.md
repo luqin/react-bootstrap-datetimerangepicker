@@ -17,15 +17,45 @@ Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 ## Installation
 
 ```
-npm install react-bootstrap-datetimerangepicker --save
+npm install react-bootstrap-datetimerangepicker onefe-bootstrap-daterangepicker --save
 ```
 
 ## Usage
 
+import style
+```js
+import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
 ```
+
+```js
 import DatetimeRangePicker from 'react-bootstrap-datetimerangepicker';
 
-<DatetimeRangePicker />
+<DateRangePicker
+    timePicker
+    timePicker24Hour
+    showDropdowns
+    timePickerSeconds
+    locale={locale}
+    startDate={this.state.startDate}
+    endDate={this.state.endDate}
+    onApply={this.handleApply}
+    onEvent={this.handleEvent}
+>
+    <input type="text" value={label}/>
+</DateRangePicker>
+
+<DateRangePicker
+    startDate={this.state.startDate}
+    endDate={this.state.endDate}
+    locale={locale}
+    onApply={this.handleApply}
+>
+    <Button>
+        <i className="fa fa-calendar"/> &nbsp;
+        <span>{label}</span>
+        <i className="fa fa-angle-down"/>
+    </Button>
+</DateRangePicker>
 ```
 
 More examples: [Online demo](http://luqin.github.io/react-bootstrap-datetimerangepicker), [Source](https://github.com/luqin/react-bootstrap-datetimerangepicker/tree/master/examples)
