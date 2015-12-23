@@ -87,6 +87,7 @@ class DatetimeRangePicker extends React.Component {
             if (value && typeof value === 'object') {
               let picker = this.getPicker();
               if (picker) {
+                value = $.extend({}, value, picker.locale);
               }
             }
             options[name] = value;
