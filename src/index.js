@@ -3,11 +3,24 @@ import $ from 'jquery';
 import 'onefe-bootstrap-daterangepicker';
 import getOptions from './getOptions';
 
+let events = ['Show', 'Hide', 'ShowCalendar', 'HideCalendar', 'Apply', 'Cancel'];
+
 class DatetimeRangePicker extends React.Component {
 
   static propTypes = {
-    onEvent: React.PropTypes.func,
+
+    startDate: React.PropTypes.any,
+
     children: React.PropTypes.any,
+
+    callback: React.PropTypes.func,
+    onEvent: React.PropTypes.func,
+    onShow: React.PropTypes.func,
+    onHide: React.PropTypes.func,
+    onShowCalendar: React.PropTypes.func,
+    onHideCalendar: React.PropTypes.func,
+    onApply: React.PropTypes.func,
+    onCancel: React.PropTypes.func,
   };
 
   static defaultProps = {};
@@ -16,23 +29,26 @@ class DatetimeRangePicker extends React.Component {
     super(props);
     this.state = {};
 
-    this.$picker = null;
+    this.$picker = undefined;
+    this.picker = undefined;
     this.options = getOptions();
+
+    this.handleCallback = this.handleCallback.bind(this);
   }
 
   componentDidMount() {
     this.$picker = $(this.refs.picker);
     // initialize
-    this.$picker.daterangepicker(this.getOptionsFromProps());
+    this.$picker.daterangepicker(this.getOptionsFromProps(), this.handleCallback);
     // attach event listeners
-    ['Show', 'Hide', 'ShowCalendar', 'HideCalendar', 'Apply', 'Cancel'].forEach(event => {
+    events.forEach(event => {
       let lcase = event.toLowerCase();
       this.$picker.on(lcase + '.daterangepicker', this.makeEventHandler('on' + event));
     });
   }
 
   componentWillUnmount() {
-    this.$picker.data('daterangepicker').remove();
+    this.getPicker().remove();
   }
 
   setOptionsFromProps() {
@@ -41,21 +57,59 @@ class DatetimeRangePicker extends React.Component {
     if (this.$picker) {
       if (currentOptions) {
         keys.forEach(key => {
-          this.$picker.data('daterangepicker')[key] = currentOptions[key];
+          this.applyOptionToPicker(key, currentOptions[key]);
         });
       }
     }
   }
 
+  getPicker() {
+    return this.$picker && this.$picker.data('daterangepicker');
+  }
+
   getOptionsFromProps() {
     let options = {};
     let props = this.props;
-    this.options.forEach(option => {
-      if (props.hasOwnProperty(option)) {
-        options[option] = props[option];
+    let value;
+    this.options.forEach(name => {
+      if (props.hasOwnProperty(name)) {
+        value = props[name];
+
+        switch (name) {
+          case 'startDate':
+          case 'endDate':
+            if (value) {
+              options[name] = value;
+            }
+            break;
+
+          case 'locale':
+            if (value && typeof value === 'object') {
+              let picker = this.getPicker();
+              if (picker) {
+              }
+            }
+            options[name] = value;
+            break;
+
+          default:
+            options[name] = value;
+        }
       }
     });
     return options;
+  }
+
+  applyOptionToPicker(key, value) {
+    if (this.$picker) {
+      this.$picker.data('daterangepicker')[key] = value;
+    }
+  }
+
+  handleCallback(start, end) {
+    if (typeof this.props.onChange === 'function') {
+      this.props.callback(start, end);
+    }
   }
 
   makeEventHandler(eventType) {
@@ -72,13 +126,10 @@ class DatetimeRangePicker extends React.Component {
   render() {
     this.setOptionsFromProps();
 
-    return React.createElement(
-      'div',
-      {
-        ref: 'picker',
-        ...this.props,
-      },
-      this.props.children
+    return (
+      <div ref="picker" {...this.props}>
+        {this.props.children}
+      </div>
     );
   }
 

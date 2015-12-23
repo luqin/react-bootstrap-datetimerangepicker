@@ -11,47 +11,48 @@ class InputInitiallyEmpty extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleEvent = this.handleEvent.bind(this);
+    this.handleApply = this.handleApply.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
 
     this.state = {
-      startDate: moment().subtract(29, 'days'),
-      endDate: moment(),
-      ranges: {
-        'Today': [moment(), moment()],
-        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-        'This Month': [moment().startOf('month'), moment().endOf('month')],
-        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-      },
+      startDate: undefined,
+      endDate: undefined,
     };
   }
 
-  handleEvent(event, picker) {
+  handleApply(event, picker) {
     this.setState({
       startDate: picker.startDate,
       endDate: picker.endDate,
     });
   }
 
+  handleCancel() {
+    this.setState({
+      startDate: undefined,
+      endDate: undefined,
+    });
+  }
+
   render() {
-    let start = this.state.startDate.format('YYYY-MM-DD');
-    let end = this.state.endDate.format('YYYY-MM-DD');
-    let label = start + ' - ' + end;
+    let { startDate, endDate } = this.state;
+
+    let label = '';
+    let start = startDate && startDate.format('YYYY-MM-DD') || '';
+    let end = endDate && endDate.format('YYYY-MM-DD') || '';
+    label = start + ' - ' + end;
     if (start === end) {
       label = start;
     }
 
     let locale = {
       format: 'YYYY-MM-DD',
-      separator: ' - ',
-      applyLabel: 'Apply',
       cancelLabel: 'Clear',
-      weekLabel: 'W',
-      customRangeLabel: 'Custom Range',
-      daysOfWeek: moment.weekdaysMin(),
-      monthNames: moment.monthsShort(),
-      firstDay: moment.localeData().firstDayOfWeek(),
+    };
+
+    let pickerProps = {
+      startDate,
+      endDate,
     };
 
     return (
@@ -61,9 +62,9 @@ class InputInitiallyEmpty extends React.Component {
           <DatetimeRangePicker
             autoUpdateInput={false}
             locale={locale}
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
-            onEvent={this.handleEvent}
+            onApply={this.handleApply}
+            onCancel={this.handleCancel}
+            {...pickerProps}
           >
             <div className="input-group">
               <input type="text" className="form-control" value={label}/>
