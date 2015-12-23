@@ -37,6 +37,7 @@
     "eslint-config-airbnb": "2.1.1",
     "eslint-config-onefe": "0.2.0",
     "eslint-plugin-react": "^3.11.3",
+    "font-awesome": "^4.5.0",
     "gulp": "^3.9.0",
     "history": "1.13.x",
     "jquery": "^2.1.4",
@@ -48,6 +49,7 @@
     "react-pack": "^0.3.0",
     "react-router": "1.0.2",
     "react-router-bootstrap": "^0.19.3",
+    "request": "^2.67.0",
     "webpack": "1.12.6",
     "webpack-dev-server": "1.12.1"
   },
