@@ -1,6 +1,5 @@
 import React from 'react';
 import DatetimeRangePicker from 'react-bootstrap-datetimerangepicker';
-import moment from 'moment';
 
 import {
   Button,

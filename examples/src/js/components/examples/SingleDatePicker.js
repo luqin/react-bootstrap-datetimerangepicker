@@ -39,7 +39,7 @@ class SingleDatePicker extends React.Component {
       firstDay: moment.localeData().firstDayOfWeek(),
     };
 
-    let buttonStyle = { width: '100%', };
+    let buttonStyle = { width: '100%' };
 
     return (
       <div className="form-group">

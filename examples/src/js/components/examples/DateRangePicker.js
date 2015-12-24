@@ -22,7 +22,7 @@ class DateRangePicker extends React.Component {
         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
         'This Month': [moment().startOf('month'), moment().endOf('month')],
-        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
       },
     };
   }
@@ -41,18 +41,6 @@ class DateRangePicker extends React.Component {
     if (start === end) {
       label = start;
     }
-
-    let locale = {
-      format: 'YYYY-MM-DD',
-      separator: ' - ',
-      applyLabel: 'Apply',
-      cancelLabel: 'Cancel',
-      weekLabel: 'W',
-      customRangeLabel: 'Custom Range',
-      daysOfWeek: moment.weekdaysMin(),
-      monthNames: moment.monthsShort(),
-      firstDay: moment.localeData().firstDayOfWeek(),
-    };
 
     return (
       <div className="form-group">
