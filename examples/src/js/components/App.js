@@ -1,38 +1,38 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
-import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
 
 import React from 'react';
-
 import {
-  Grid,
+  Navbar,
+  NavBrand,
+  Nav,
+  NavItem,
 } from 'react-bootstrap';
-
-import DateRangePicker from './DateRangePicker';
-import DateAndTime from './DateAndTime';
-import SingleDatePicker from './SingleDatePicker';
-import PredefinedRanges from './PredefinedRanges';
-import InputInitiallyEmpty from './InputInitiallyEmpty';
-// import Internationalization from './Internationalization';
 
 class App extends React.Component {
 
+  static propTypes = {
+    children: React.PropTypes.node,
+  };
+
   render() {
     return (
-      <Grid>
-        <h2>Examples</h2>
-        <hr/>
-        <form className="form-horizontal form-bordered">
-          <div className="form-body">
-            <DateRangePicker/>
-            <DateAndTime/>
-            <SingleDatePicker/>
-            <PredefinedRanges/>
-            <InputInitiallyEmpty/>
-            {/* <Internationalization/> */}
-          </div>
-        </form>
-      </Grid>
+      <div>
+        <Navbar inverse staticTop toggleNavKey={0}>
+          <NavBrand><a href="#">React Bootstrap Date&Time Range Picker</a></NavBrand>
+          <Nav>
+            <NavItem
+              eventKey={2}
+              href="//github.com/luqin/react-bootstrap-datetimerangepicker"
+              target="_blank"
+            >
+              GitHub
+            </NavItem>
+          </Nav>
+        </Navbar>
+
+        {this.props.children}
+      </div>
     );
   }
 

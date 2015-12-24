@@ -6,12 +6,12 @@ import {
   Button,
 } from 'react-bootstrap';
 
-class DateAndTime extends React.Component {
+class DateRangePicker extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.handleEvent = this.handleEvent.bind(this);
+    this.handleApply = this.handleApply.bind(this);
 
     this.state = {
       startDate: moment().subtract(29, 'days'),
@@ -27,7 +27,7 @@ class DateAndTime extends React.Component {
     };
   }
 
-  handleEvent(event, picker) {
+  handleApply(event, picker) {
     this.setState({
       startDate: picker.startDate,
       endDate: picker.endDate,
@@ -35,15 +35,15 @@ class DateAndTime extends React.Component {
   }
 
   render() {
-    let start = this.state.startDate.format('YYYY-MM-DD HH:mm:ss');
-    let end = this.state.endDate.format('YYYY-MM-DD HH:mm:ss');
+    let start = this.state.startDate.format('YYYY-MM-DD');
+    let end = this.state.endDate.format('YYYY-MM-DD');
     let label = start + ' - ' + end;
     if (start === end) {
       label = start;
     }
 
     let locale = {
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'YYYY-MM-DD',
       separator: ' - ',
       applyLabel: 'Apply',
       cancelLabel: 'Cancel',
@@ -56,17 +56,12 @@ class DateAndTime extends React.Component {
 
     return (
       <div className="form-group">
-        <label className="control-label col-md-3">Date and Time</label>
+        <label className="control-label col-md-3">Date Range Picker</label>
         <div className="col-md-4">
           <DatetimeRangePicker
-            timePicker
-            timePicker24Hour
-            showDropdowns
-            timePickerSeconds
-            locale={locale}
             startDate={this.state.startDate}
             endDate={this.state.endDate}
-            onEvent={this.handleEvent}
+            onApply={this.handleApply}
           >
             <div className="input-group">
               <input type="text" className="form-control" value={label}/>
@@ -84,4 +79,4 @@ class DateAndTime extends React.Component {
 
 }
 
-export default DateAndTime;
+export default DateRangePicker;

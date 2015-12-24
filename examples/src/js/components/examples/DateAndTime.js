@@ -6,12 +6,12 @@ import {
   Button,
 } from 'react-bootstrap';
 
-class DateRangePicker extends React.Component {
+class DateAndTime extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.handleEvent = this.handleEvent.bind(this);
+    this.handleApply = this.handleApply.bind(this);
 
     this.state = {
       startDate: moment().subtract(29, 'days'),
@@ -27,7 +27,7 @@ class DateRangePicker extends React.Component {
     };
   }
 
-  handleEvent(event, picker) {
+  handleApply(event, picker) {
     this.setState({
       startDate: picker.startDate,
       endDate: picker.endDate,
@@ -35,15 +35,15 @@ class DateRangePicker extends React.Component {
   }
 
   render() {
-    let start = this.state.startDate.format('YYYY-MM-DD');
-    let end = this.state.endDate.format('YYYY-MM-DD');
+    let start = this.state.startDate.format('YYYY-MM-DD HH:mm:ss');
+    let end = this.state.endDate.format('YYYY-MM-DD HH:mm:ss');
     let label = start + ' - ' + end;
     if (start === end) {
       label = start;
     }
 
     let locale = {
-      format: 'YYYY-MM-DD',
+      format: 'YYYY-MM-DD HH:mm:ss',
       separator: ' - ',
       applyLabel: 'Apply',
       cancelLabel: 'Cancel',
@@ -56,12 +56,17 @@ class DateRangePicker extends React.Component {
 
     return (
       <div className="form-group">
-        <label className="control-label col-md-3">Date Range Picker</label>
+        <label className="control-label col-md-3">Date and Time</label>
         <div className="col-md-4">
           <DatetimeRangePicker
+            timePicker
+            timePicker24Hour
+            showDropdowns
+            timePickerSeconds
+            locale={locale}
             startDate={this.state.startDate}
             endDate={this.state.endDate}
-            onEvent={this.handleEvent}
+            onApply={this.handleApply}
           >
             <div className="input-group">
               <input type="text" className="form-control" value={label}/>
@@ -79,4 +84,4 @@ class DateRangePicker extends React.Component {
 
 }
 
-export default DateRangePicker;
+export default DateAndTime;
