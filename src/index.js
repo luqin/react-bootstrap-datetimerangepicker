@@ -108,7 +108,7 @@ class DatetimeRangePicker extends React.Component {
   }
 
   handleCallback(start, end) {
-    if (typeof this.props.onChange === 'function') {
+    if (typeof this.props.callback === 'function') {
       this.props.callback(start, end);
     }
   }
