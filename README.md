@@ -43,6 +43,14 @@ import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
 import DatetimeRangePicker from 'react-bootstrap-datetimerangepicker';
 
 <DatetimeRangePicker
+    startDate={this.state.startDate}
+    endDate={this.state.endDate}
+    onApply={this.handleApply}
+>
+    <input type="text" value={label}/>
+</DatetimeRangePicker>
+
+<DatetimeRangePicker
     timePicker
     timePicker24Hour
     showDropdowns
@@ -50,16 +58,6 @@ import DatetimeRangePicker from 'react-bootstrap-datetimerangepicker';
     locale={locale}
     startDate={this.state.startDate}
     endDate={this.state.endDate}
-    onApply={this.handleApply}
-    onEvent={this.handleEvent}
->
-    <input type="text" value={label}/>
-</DatetimeRangePicker>
-
-<DatetimeRangePicker
-    startDate={this.state.startDate}
-    endDate={this.state.endDate}
-    locale={locale}
     onApply={this.handleApply}
 >
     <Button>
