@@ -27,7 +27,7 @@ Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 ## Installation
 
 ```
-npm install react-bootstrap-datetimerangepicker onefe-bootstrap-daterangepicker --save
+npm install react-bootstrap-datetimerangepicker bootstrap-daterangepicker --save
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Date Range Picker relies on [Bootstrap](http://getbootstrap.com/), [jQuery](http
 
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
-import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
+import 'bootstrap-daterangepicker/daterangepicker.css';
 ```
 
 ```js
