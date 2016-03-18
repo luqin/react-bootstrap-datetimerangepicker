@@ -24,6 +24,30 @@ Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 
 
 
+## Upgrade guide
+
+**< 2.0 to 2.x**
+
+Using official `bootstrap-daterangepicker`
+
+```sh
+# <2.0
+npm install react-bootstrap-datetimerangepicker onefe-bootstrap-daterangepicker --save
+
+# 2.x
+npm install react-bootstrap-datetimerangepicker bootstrap-daterangepicker --save
+```
+
+```js
+// <2.0
+import 'bootstrap/dist/css/bootstrap.css';
+import 'onefe-bootstrap-daterangepicker/daterangepicker.css';
+
+// 2.x
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-daterangepicker/daterangepicker.css';
+```
+
 ## Installation
 
 ```
@@ -151,7 +175,7 @@ var SomeReactComponent = React.createClass({
 [dev-deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker#info=devDependencies
 
 [peer-deps-badge]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker/peer-status.svg
-[peer-deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker#info=peerDependencies 
+[peer-deps]: https://david-dm.org/luqin/react-bootstrap-datetimerangepicker#info=peerDependencies
 
 [travis-ci-image]: https://travis-ci.org/luqin/react-bootstrap-datetimerangepicker.svg
 [travis-ci-url]: https://travis-ci.org/luqin/react-bootstrap-datetimerangepicker
