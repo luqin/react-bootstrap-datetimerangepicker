@@ -26,7 +26,7 @@ Online demo: http://luqin.github.io/react-bootstrap-datetimerangepicker
 
 ## Upgrade guide
 
-**< 2.0 to 2.x**
+**<2.0 to 2.x**
 
 Using official `bootstrap-daterangepicker`
 
