@@ -4,6 +4,7 @@ function getOptions() {
     'applyClass',
     'autoApply',
     'autoUpdateInput',
+    'alwaysShowCalendars',
     'buttonClasses',
     'cancelClass',
     'dateLimit',
