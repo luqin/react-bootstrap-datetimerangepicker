@@ -1,2 +1,9 @@
 *.idea
-examples
+.publish/
+.babelrc
+.editorconfig
+.eslintrc
+.travis.yml
+config.js
+gulpfile.js
+examples/
