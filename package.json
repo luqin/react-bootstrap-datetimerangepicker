@@ -18,10 +18,10 @@
   "license": "ISC",
   "peerDependencies": {
     "jquery": ">=1.11.3",
-    "react": ">=0.14.0"
+    "react": ">=0.14.0",
+    "bootstrap-daterangepicker": "^2.1.19"
   },
   "dependencies": {
-    "bootstrap-daterangepicker": "^2.1.19",
     "babel-runtime": "^5.8.38",
     "classnames": "^2.2.3"
   },
@@ -31,6 +31,7 @@
     "babel-eslint": "^4.1.1",
     "babel-plugin-object-assign": "^1.1.0",
     "bootstrap": "3.3.5",
+    "bootstrap-daterangepicker": "^2.1.19",
     "cheerio": "^0.19.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "2.1.1",
