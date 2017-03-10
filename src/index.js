@@ -10,8 +10,10 @@ class DatetimeRangePicker extends React.Component {
   static propTypes = {
 
     startDate: React.PropTypes.any,
-
+    endDate: React.PropTypes.any,
     children: React.PropTypes.any,
+    className: React.PropTypes.string,
+    style: React.PropTypes.object,
 
     callback: React.PropTypes.func,
     onEvent: React.PropTypes.func,
@@ -128,7 +130,7 @@ class DatetimeRangePicker extends React.Component {
     this.setOptionsFromProps();
 
     return (
-      <div ref="picker" {...this.props}>
+      <div ref="picker" style={this.props.style} className={this.props.className}>
         {this.props.children}
       </div>
     );
