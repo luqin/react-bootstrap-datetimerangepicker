@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "babel-runtime": "^5.8.38",
-    "classnames": "^2.2.3"
+    "classnames": "^2.2.3",
+    "prop-types": "^15.5.9"
   },
   "devDependencies": {
     "babel": "5.8.29",
