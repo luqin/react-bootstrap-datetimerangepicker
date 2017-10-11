@@ -45,7 +45,7 @@ class DatetimeRangePicker extends React.Component {
     this.$picker.daterangepicker(this.getOptionsFromProps(), this.handleCallback);
     // attach event listeners
     events.forEach(event => {
-	  let cCase = event.charAt(0).toLowerCase() + event.slice(1);
+      let cCase = event.charAt(0).toLowerCase() + event.slice(1);
       this.$picker.on(cCase + '.daterangepicker', this.makeEventHandler('on' + event));
     });
   }
